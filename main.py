@@ -307,34 +307,34 @@ async def init():
                     "Failed to send the message, User might have blocked the bot or something wrong happened. Please check logs"
                 )
 
-    MUST_JOIN = ""
 
     @app.on_message(filters.incoming & filters.private, group=-1)
     async def must_join_channel(bot, msg: Message):
-        if not MUST_JOIN:  # Not compulsory
-            return
+        OwO = await app.get_chat("@blionriechats")
+        UwU = await app.get_chat("@blionriesupport")
         try:
             try:
-                await app.get_chat_member(MUST_JOIN, msg.from_user.id)
+                await app.get_chat_member(OwO.id, msg.from_user.id)
+                await app.get_chat_member(UwU.id, msg.from_user.id)
             except UserNotParticipant:
-                if MUST_JOIN.isalpha():
-                    link = "https://t.me/" + MUST_JOIN
-                else:
-                    chat_info = await app.get_chat(MUST_JOIN)
-                    link = chat_info.invite_link
+                link = OwO.invite_link
+                linkk = UwU.invite_link
                 try:
                     await msg.reply(
-                        f"You must join [this channel]({link}) to use me. After joining try again !",
+                        f"You must join [this channel]({link}) and [this channel]({linkk}) to use me. After joining try again !",
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup([
-                            [InlineKeyboardButton("• Join Channel •", url=link)]
+                            [
+                                InlineKeyboardButton("• Join Channel •", url=link),
+                                InlineKeyboardButton("• Join Channel •", url=linkk)
+                            ]
                         ])
                     )
                     await msg.stop_propagation()
                 except ChatWriteForbidden:
                     pass
         except ChatAdminRequired:
-            print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !")
+            print(f"I'm not admin in the MUST_JOIN chat : {OwO.title} or {UwU.title} !")
     print("[LOG] - Yukki Chat Bot Started")
     await idle()
 
