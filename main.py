@@ -325,8 +325,8 @@ async def init():
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup([
                             [
-                                InlineKeyboardButton("• Join Channel •", url=link),
-                                InlineKeyboardButton("• Join Channel •", url=linkk)
+                                InlineKeyboardButton("• Join Group •", url=https://t.me/blionriechats),
+                                InlineKeyboardButton("• Join Channel •", url=https://t.me/blionriesupport)
                             ]
                         ])
                     )
