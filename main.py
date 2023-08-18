@@ -321,7 +321,7 @@ async def init():
                 linkk = UwU.invite_link
                 try:
                     await msg.reply(
-                        f"You must join [⏤͟͞⁪⁬⁮⁮⁮⁮𝘽𝙡𝙞𝙤𝙣𝙧𝙞𝙚 𝘾𝙝𝙖𝙩 </>]({https://t.me/blionriechats}) and [⁪⁬⁮⁮⁮⁮ ‌⏤͟͞⁪⁬⁮⁮⁮⁮𝘽𝙡𝙞𝙤𝙣𝙧𝙞𝙚•𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ™</>]({https://t.me/blionriesupport}) to use me. After joining try again !",
+                        f"You must join [ Bionrie Chat </>]({link}) and [⁪⁬⁮⁮⁮⁮Blionrie Support</> ]({link}) to use me. After joining try again !",
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup([
                             [
